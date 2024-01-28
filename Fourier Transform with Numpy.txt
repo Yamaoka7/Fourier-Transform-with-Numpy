@@ -1,0 +1,19 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Create a signal (sine wave)
+t = np.linspace(0, 1, 1000, endpoint=False)
+signal = np.sin(2 * np.pi * 5 * t)
+
+# Perform Fourier Transform
+fft_result = np.fft.fft(signal)
+
+# Plot the original signal and its Fourier Transform
+plt.subplot(2, 1, 1)
+plt.plot(t, signal)
+plt.title('Original Signal')
+
+plt.subplot(2, 1, 2)
+plt.plot(np.abs(fft_result))
+plt.title('Fourier Transform')
+plt.show()
